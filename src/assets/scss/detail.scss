@@ -1,0 +1,48 @@
+.project-info {
+    .sub-title, .fee-info .sub-title {
+        color: #20A0FF;
+        height: 30px;
+        line-height: 30px;
+    }
+    ul {
+        padding: 0;
+        li {
+            list-style: none;
+            display: flex;
+            :first-child {
+                span {
+                    border-top: 1px solid #EEF1F6;
+                }
+            }
+            span {
+                height: 40px;
+                line-height: 40px;
+                border-right: 1px solid #EEF1F6;
+                border-bottom: 1px solid #EEF1F6;
+                padding-left: 20px;
+                :first-child {
+                    border-left: 1px solid #EEF1F6;
+                    flex: 1;
+                }
+                :nth-child(2) {
+                    flex: 1;
+                }
+                :nth-child(3) {
+                    flex: 1; 
+                }
+                :nth-child(4) {
+                    flex: 1; 
+                }
+            }
+        }
+    }
+}
+.fee-info {
+    .fee {
+        display: flex;
+        span {
+            flex: 1;
+            margin: 10px 0 20px 0;
+        }
+    }
+}

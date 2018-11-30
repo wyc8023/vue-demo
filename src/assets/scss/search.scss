@@ -1,0 +1,26 @@
+.search-form {
+  background: #EEF1F6;
+  margin-bottom: 30px;
+  padding: 20px 0 0 20px;
+  border-radius: 3px;
+  font-size: 14px;
+  li {
+    float: left;
+    list-style: none;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    label {
+      float: left;
+      line-height: 40px;
+      text-align: left;
+      width: 60px;
+      margin-right: 16px;
+    }
+    .input {
+      float: left;
+      .el-input {
+        width: 194px;
+      }
+    }
+  }
+}

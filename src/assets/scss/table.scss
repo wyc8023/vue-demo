@@ -1,0 +1,18 @@
+.table-content  {
+    .table-title {
+        height: 30px;
+        margin-bottom: 10px;
+        p {
+            float: left;
+            margin: 0;
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+        }
+        .add-btn {
+            float: right;
+            margin-left: 20px;
+        }
+    }
+}
+

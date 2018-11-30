@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<script src="https://cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.4.9/index.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.4.9/theme-chalk/index.css" rel="stylesheet">
+</head>
+<body>
+    <div id="ueditor">
+    <el-upload ref="upload"
+                action="https://ecommerce-api.sitechdev.com/news/upload"
+                list-type="picture"
+                :on-remove="handleRemove"
+                :on-success="handleSuccess"
+                :file-list="fileList"
+                :auto-upload="false"
+                :multiple="true">
+        <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
+        <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
+        <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且一张图片大小不超过500kb，为了图片最佳显示建议图片长*宽(470*256)</div>
+    </el-upload>
+    </div>
+
+<script>
+    var ueditor = new Vue({
+        el: '#ueditor',
+        data() {
+            return{
+                fileList:[]
+            }
+        },
+        methods:{
+            submitUpload(){
+                this.$refs.upload.submit();
+            },
+            handleRemove(file, fileList) {
+                console.log(file, fileList);
+            },
+            handleSuccess(data, file, fileList){
+                this.fileList = fileList
+                window.parent.uploadIImage(this.fileList)
+            }
+        }
+    })
+
+</script>
+  </body>
+  </html>
